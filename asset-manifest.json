@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/misstoyshayrabin/static/css/main.3a405215.css",
+    "main.js": "/misstoyshayrabin/static/js/main.9ef948a2.js",
+    "static/media/background.jpg": "/misstoyshayrabin/static/media/background.0558f485f320d26eeb13.jpg",
+    "index.html": "/misstoyshayrabin/index.html",
+    "main.3a405215.css.map": "/misstoyshayrabin/static/css/main.3a405215.css.map",
+    "main.9ef948a2.js.map": "/misstoyshayrabin/static/js/main.9ef948a2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3a405215.css",
+    "static/js/main.9ef948a2.js"
+  ]
+}
