@@ -1,0 +1,44 @@
+{
+  "toys": [
+    {
+      "id": 1,
+      "name": "Car",
+      "price": 19.99,
+      "image": "/assets/car.jpg",
+      "category": "Vehicles",
+      "rating": 4,
+      "inStock": true,
+      "messages": []
+    },
+    {
+      "id": 2,
+      "name": "Doll",
+      "price": 14.99,
+      "image": "/assets/doll.jpg",
+      "category": "Figures",
+      "rating": 5,
+      "inStock": true,
+      "messages": [
+        {
+          "id": "m101",
+          "txt": "Lovely toy, my daughter loved it!",
+          "by": {
+            "_id": "u102",
+            "fullname": "Regular User"
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Blocks",
+      "price": 9.99,
+      "image": "/assets/blocks.jpg",
+      "category": "Building Toys",
+      "rating": 3,
+      "inStock": false,
+      "messages": []
+    }
+  ],
+  "categories": ["Vehicles", "Figures", "Building Toys"]
+}

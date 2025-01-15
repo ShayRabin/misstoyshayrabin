@@ -1,0 +1,288 @@
+// משתנים
+$primary-color: #007bff;
+$secondary-color: #6c5ce7;
+$success-color: #28a745;
+$error-color: #e74c3c;
+$warning-color: #f1c40f;
+$text-color: #333;
+$bg-color: #ffafcc;
+$modal-bg-color: rgba(0, 0, 0, 0.6);
+$font-family: 'Roboto', Arial, sans-serif;
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-image: url('../public/assets/background.jpg');    
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+// כותרת ראשית
+.app-header {
+    background-color: $bg-color;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    border-bottom: 4px solid darken($bg-color, 10%);
+
+    h1 {
+        font-size: 40px;
+        color: darken($text-color, 20%);
+        text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+    }
+}
+
+// טפסים ושדות קלט
+input,
+select {
+    margin: 5px;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+
+    &:focus {
+        border-color: $secondary-color;
+        box-shadow: 0 0 10px rgba($secondary-color, 0.4);
+    }
+}
+
+// כפתורים
+button {
+    margin: 5px;
+    padding: 12px 25px;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: darken($primary-color, 10%);
+        transform: scale(1.05);
+    }
+
+    &:active {
+        background-color: darken($primary-color, 20%);
+    }
+
+    &.add-toy-button {
+        background-color: $success-color;
+
+        &:hover {
+            background-color: darken($success-color, 10%);
+        }
+
+        &:active {
+            background-color: darken($success-color, 20%);
+        }
+    }
+
+    &.delete-button {
+        background-color: $error-color;
+
+        &:hover {
+            background-color: darken($error-color, 10%);
+        }
+
+        &:active {
+            background-color: darken($error-color, 20%);
+        }
+    }
+
+    &.edit-button {
+        background-color: $warning-color;
+
+        &:hover {
+            background-color: darken($warning-color, 10%);
+        }
+
+        &:active {
+            background-color: darken($warning-color, 20%);
+        }
+    }
+}
+
+// רשימת צעצועים
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 1200px;
+    list-style: none;
+}
+
+// כרטיסי צעצועים
+.toy-card {
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 15px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.5s ease-in-out;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .toy-image {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .toy-name {
+        font-size: 20px;
+        font-weight: bold;
+        color: darken($text-color, 20%);
+        text-align: center;
+    }
+
+    .toy-category {
+        font-size: 16px;
+        color: lighten($text-color, 30%);
+        margin-bottom: 10px;
+    }
+
+    .toy-price {
+        font-size: 18px;
+        color: $success-color;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    .card-buttons button {
+        margin: 5px;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+// Modal
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $modal-bg-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeInModal 0.3s ease-in-out;
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: $text-color;
+        text-align: center;
+    }
+
+    input,
+    select {
+        width: 100%;
+        margin: 10px 0;
+        padding: 12px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+        outline: none;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+            border-color: $secondary-color;
+            box-shadow: 0 0 8px rgba($secondary-color, 0.5);
+        }
+    }
+
+    .add-toy-button {
+        background-color: $success-color;
+    }
+
+    .cancel-button {
+        background-color: $error-color;
+    }
+}
+
+// אנימציות
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInModal {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .toy-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .toy-card {
+        width: 90%;
+        margin-bottom: 1rem;
+    }
+}
+
+.add-toy-button,
+.add-category-button {
+    background: linear-gradient(135deg, #f6d365, #fda085);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: linear-gradient(135deg, #fda085, #f6d365);
+        transform: scale(1.05);
+    }
+}

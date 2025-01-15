@@ -1,0 +1,39 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f7f9fc;
+
+    h2 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #0056b3;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .toy-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .toy-card {
+        width: 90%;
+        margin-bottom: 1rem;
+    }
+}
